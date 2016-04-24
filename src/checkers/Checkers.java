@@ -8,15 +8,15 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 
     Graphics g;
 
-    JTextArea msg=new JTextArea("Start a new game... Blue is to move first...");
-    ImageIcon redN=new ImageIcon(new ImageIcon(getClass().getResource("/images/red.png")).getImage());//red_normal.jpg
-    ImageIcon yellowN=new ImageIcon(new ImageIcon(getClass().getResource("/images/blue.png")).getImage());//yellow_normal.jpg
-    ImageIcon redK=new ImageIcon(new ImageIcon(getClass().getResource("/images/rs.jpg")).getImage());//red_king.jpg
-    ImageIcon yellowK=new ImageIcon(new ImageIcon(getClass().getResource("/images/bs.jpg")).getImage());//yellow_king.jpg
-    ImageIcon hlp=new ImageIcon(new ImageIcon(getClass().getResource("/images/help.jpg")).getImage());//help.jpg
-    ImageIcon snp=new ImageIcon(new ImageIcon(getClass().getResource("/images/sound.jpg")).getImage());//sound.jpg
-    ImageIcon mup=new ImageIcon(new ImageIcon(getClass().getResource("/images/mute.jpg")).getImage());//mute.jpg
-
+    JTextArea msg=new JTextArea("Start a new game... Yellow is to move first...");
+    ImageIcon redN=new ImageIcon("./images/red_normal.jpg");//red_normal.jpg
+    ImageIcon yellowN=new ImageIcon("./images/yellow_normal.jpg");//yellow_normal.jpg
+    ImageIcon redK=new ImageIcon("./images/red_king.jpg");//red_king.jpg
+    ImageIcon yellowK=new ImageIcon("./images/yellow_king.jpg");//yellow_king.jpg
+    ImageIcon hlp=new ImageIcon("./images/help.jpg");//help.jpg
+    ImageIcon snp=new ImageIcon("./images/sound.jpg");//sound.jpg
+    ImageIcon mup=new ImageIcon("./images/mute.jpg");//mute.jpg
+    
     JButton nwB=new JButton("New Game");
     JButton unB=new JButton("Undo");
     JButton hlpB=new JButton(hlp);
