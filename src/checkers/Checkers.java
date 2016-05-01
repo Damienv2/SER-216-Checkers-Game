@@ -260,7 +260,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             new PlaySound("./sounds//option.wav").start();
         }
         if(e.getActionCommand().equalsIgnoreCase("New Game")){
-            new PlaySound("src//sounds//button.wav").start();
+            new PlaySound("./sounds//button.wav").start();
             newGame();
         }
         if(e.getActionCommand().equalsIgnoreCase("Undo") && undoCount>3){
@@ -450,7 +450,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 				
                 CheckerMove.moveComputer(board, result);
                 if (loser == empty){
-                    new PlaySound("src//sounds//comPlay.wav").start();
+                    new PlaySound("./sounds//comPlay.wav").start();
                     play();
                 }
 
