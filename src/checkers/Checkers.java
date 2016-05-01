@@ -227,7 +227,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equalsIgnoreCase("1-Player")){
-            new PlaySound("src//sounds//option.wav").start();
+            new PlaySound("./sounds//option.wav").start();
             col.setEnabled(true);
             col.setVisible(true);
             diff.setEnabled(true);
@@ -240,7 +240,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             level.setVisible(true);
         }
         if(e.getActionCommand().equalsIgnoreCase("2-Player")){
-            new PlaySound("src//sounds//option.wav").start();
+            new PlaySound("./sounds//option.wav").start();
             col.setEnabled(false);
             col.setVisible(false);
             diff.setEnabled(false);
@@ -254,28 +254,28 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             c2.setSelected(true);
         }
         if(e.getActionCommand().equalsIgnoreCase("red")){
-            new PlaySound("src//sounds//option.wav").start();
+            new PlaySound("./sounds//option.wav").start();
         }
         if(e.getActionCommand().equalsIgnoreCase("yellow")){
-            new PlaySound("src//sounds//option.wav").start();
+            new PlaySound("./sounds//option.wav").start();
         }
         if(e.getActionCommand().equalsIgnoreCase("New Game")){
             new PlaySound("src//sounds//button.wav").start();
             newGame();
         }
         if(e.getActionCommand().equalsIgnoreCase("Undo") && undoCount>3){
-            new PlaySound("src//sounds//button.wav").start();
+            new PlaySound("./sounds//button.wav").start();
             undo();
         }
         if(e.getSource()==hlpB){
-            new PlaySound("src//sounds//button.wav").start();
+            new PlaySound("./sounds//button.wav").start();
             hp.setVisible(true);
         }
         if(e.getSource()==snB){
             if(silent){
                 snB.setIcon(snp);
                 silent=false;
-                new PlaySound("src//sounds//button.wav").start();
+                new PlaySound("./sounds//button.wav").start();
             }
             else{
                 snB.setIcon(mup);
@@ -412,10 +412,18 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 				loser = redNormal;
 			else
 			{
+				update(getGraphics());
+				
+		        try {
+					Thread.sleep(500);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				
                 CheckerMove.moveComputer(board, result);
 
                 if (loser == empty){
-                    new PlaySound("src//sounds//comPlay.wav").start();
+                    new PlaySound("./sounds//comPlay.wav").start();
                     play();
                 }
                 this.toMove = yellowNormal;
@@ -432,6 +440,14 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
 				loser = yellowNormal;
 			else
 			{
+				update(getGraphics());
+				
+		        try {
+					Thread.sleep(500);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				
                 CheckerMove.moveComputer(board, result);
                 if (loser == empty){
                     new PlaySound("src//sounds//comPlay.wav").start();
@@ -492,7 +508,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
                 g.setColor(new Color(255,100,30));
                 g.fillRect(50*square[0],50*square[1],50,50);                 
                 drawCheckers();
-                new PlaySound("src//sounds//clickChecker.wav").start();
+                new PlaySound("./sounds//clickChecker.wav").start();
             }
 		}
 		else if ( highlight  && (float)(square[0]+square[1]) / 2 != (square[0]+square[1]) / 2)
@@ -548,17 +564,17 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
             msg.setText("Red to move");
         }
         else{
-            msg.setText("Blue to move");
+            msg.setText("Yellow to move");
         }
 
         if (loser == redNormal && won==0){
-            msg.setText("Blue Wins!");
+            msg.setText("Yellow Wins!");
             try {
                 Thread.sleep(150);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            new GameWin("Blue",this.getLocationOnScreen());
+            new GameWin("Yellow",this.getLocationOnScreen());
             won=1;
             undoCount=0;
             newGame();
