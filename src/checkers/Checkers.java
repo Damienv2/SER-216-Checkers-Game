@@ -37,7 +37,7 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     JLabel diff=new JLabel("Difficulty Level");
     JLabel rp=new JLabel();
     JLabel rpt=new JLabel("Opponent's Piece");
-    JLabel bpt=new JLabel("Your Pieces");
+    JLabel bpt=new JLabel("Your Piece");
     JLabel bp=new JLabel();
     JLabel rk=new JLabel();
     JLabel rkt=new JLabel("Opponent's King");
@@ -177,28 +177,28 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
         msg.setEnabled(false);
         this.add(msg);
 
-        rp.setBounds(10, 440, 50, 50);
+        rp.setBounds(10, 435, 50, 50);
         rp.setIcon(redN);
         this.add(rp);
-        rpt.setBounds(60, 450, 60, 20);
+        rpt.setBounds(55, 450, 85, 20);
         this.add(rpt);
 
-        bp.setBounds(110, 440, 50, 50);
+        bp.setBounds(150, 435, 50, 50);
         bp.setIcon(yellowN);
         this.add(bp);
-        bpt.setBounds(160, 450, 90, 20);
+        bpt.setBounds(195, 450, 50, 20);
         this.add(bpt);
 
-        rk.setBounds(250, 440, 50, 50);
+        rk.setBounds(255, 435, 50, 50);
         rk.setIcon(redK);
         this.add(rk);
-        rkt.setBounds(305, 450, 60, 20);
+        rkt.setBounds(300, 450, 85, 20);
         this.add(rkt);
 
-        bk.setBounds(365, 440, 50, 50);
+        bk.setBounds(395, 435, 50, 50);
         bk.setIcon(yellowK);
         this.add(bk);
-        bkt.setBounds(420, 450, 100, 20);
+        bkt.setBounds(440, 450, 50, 20);
         this.add(bkt);
 
         //g=getGraphics();
