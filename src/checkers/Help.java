@@ -1,6 +1,7 @@
 package checkers;
 
 import javax.swing.*;
+
 import java.io.*;
 import java.awt.*;
 
@@ -18,6 +19,7 @@ public class Help extends JDialog {
         txt.setLineWrap(true);
         txt.setWrapStyleWord(true);
         txt.setFont(new Font("Dialog",Font.PLAIN,14));
+        txt.setMargin(new Insets(5,15,0,15));
         hlp.getHorizontalScrollBar().setEnabled(false);
         addText();        
         add(hlp);
