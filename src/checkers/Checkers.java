@@ -36,12 +36,12 @@ public class Checkers extends JPanel implements ActionListener, ItemListener, Mo
     JLabel col=new JLabel("Colour");
     JLabel diff=new JLabel("Difficulty Level");
     JLabel rp=new JLabel();
-    JLabel rpt=new JLabel("Your Piece");
-    JLabel bpt=new JLabel("Opponent's Piece");
+    JLabel rpt=new JLabel("Opponent's Piece");
+    JLabel bpt=new JLabel("Your Pieces");
     JLabel bp=new JLabel();
     JLabel rk=new JLabel();
-    JLabel rkt=new JLabel("Your King");
-    JLabel bkt=new JLabel("Opponent's King");
+    JLabel rkt=new JLabel("Opponent's King");
+    JLabel bkt=new JLabel("Your King");
     JLabel bk=new JLabel();
 
     JComboBox level=new JComboBox();
